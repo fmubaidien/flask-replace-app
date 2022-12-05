@@ -6,6 +6,6 @@ def string_replace(str):
     for i in words:
         if i in str:
             str=str.replace(i, i+'©')
-    return str;
+    return str
 
 print(string_replace(str))
