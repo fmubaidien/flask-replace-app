@@ -16,3 +16,6 @@ def replace():
     for i in words:
         rep=rep.replace(i, i+'©')
     return rep
+
+if __name__ == "__main__":
+    app.run(debug=True)
