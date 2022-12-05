@@ -1,10 +1,18 @@
-str="to Amazon Amazon Deloitte to Oracle be replaced Google"
+from flask import Flask
+from flask import request
 
-def string_replace(str):
-    words=["Google", "Microsoft", "Amazon" ,"Deloitte", "Oracle"]
+app = Flask(__name__)
 
+
+@app.route('/')
+def hello():
+    return 'Hello Deloitte, welcome to my test case'
+
+@app.route('/test', methods=['POST'])
+def replace():
+    words=["Google", "Microsoft", "Amazon" ,"-+Deloitte", "Oracle"]
+    rep=request.data
+    rep=rep.decode("utf-8")
     for i in words:
-        str=str.replace(i, i+'©')
-    return str
-
-print(string_replace(str))
+        rep=rep.replace(i, i+'©')
+    return rep
