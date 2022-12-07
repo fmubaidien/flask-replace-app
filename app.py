@@ -8,7 +8,7 @@ app = Flask(__name__)
 def hello():
     return 'Hello Deloitte, welcome to my test case'
 
-@app.route('/test', methods=['POST'])
+@app.route('/replace', methods=['POST'])
 def replace():
     words=["Google", "Microsoft", "Amazon" ,"-+Deloitte", "Oracle"]
     rep=request.data
